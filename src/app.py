@@ -4,7 +4,7 @@ import csv
 csv.register_dialect('read_semi','excel', delimiter=';')
 #create ordered dictionary 
 input_file = csv.DictReader(open("../input/tester.csv"),dialect='read_semi')
-
+print(input_file)
 occupation_dict = {}
 state_dict = {}
 count = 0
@@ -18,7 +18,6 @@ def checkDict(dict, key_val):
 for row in input_file:
     if row['CASE_STATUS'] == 'CERTIFIED':
         count = count +1
-        #occupation_code = row["SOC_CODE"]
         occupation_name = row["SOC_NAME"]
         state = row["WORKSITE_STATE"]
         checkDict(occupation_dict,occupation_name)
@@ -49,4 +48,4 @@ def write_text_file(name, titles, info):
         f.close()
             
 
-write_text_file("hello.txt", ["yo", "what_up"], top_10_occu)
+#write_text_file("hello.txt", ["yo", "what_up"], top_10_occu)
