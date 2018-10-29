@@ -9,5 +9,5 @@ class Top10:
     def calc_percent(self, top_10):
         for row in top_10:
             num = row[1][0]
-            percent = (num*100)/self.count
+            percent = round((num*100)/self.count, 2)
             row[1].append(percent)

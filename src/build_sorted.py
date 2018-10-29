@@ -1,10 +1,11 @@
 class BuildSorted:
-    def __init__(self,data,q1, q2):
+    def __init__(self,data,q1, q2,status_label):
         self.data = data
         self.q1_dict = {}
         self.q2_dict = {}
         self.q1 = str(q1)
         self.q2 = str(q2)
+        self.status_label = str(status_label)
         self.count = 0
         self.build_Dicts()
 
@@ -16,7 +17,7 @@ class BuildSorted:
 
     def build_Dicts(self):
         for row in self.data:
-            if row['CASE_STATUS'] == 'CERTIFIED':
+            if row[self.status_label] == 'CERTIFIED':
                 self.count += 1
                 value_1 = row[self.q1]
                 value_2 = row[self.q2]
