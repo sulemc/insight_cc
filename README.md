@@ -23,6 +23,11 @@ Finally, the .txt file is written using the top 10 lists and column labels, the 
 
 To make the code resuable and fully executable using just `run.sh` I scripted an interactive mode for the command interface. This allows the user to specify the input file name, column labels specific to that particular year and the desired output file name. This will allow the user to compute the top 10 list for any 2 columns, not just state and occupation.
 
+Moving forward I would implement:
+ * verifying user input
+ * making the top _ list flexible for different numbers
+ (the Class MakeLabels was written with this goal in mind)
+
 ## Run Instructions
 * To run on the default settings, meaning the tester file `h1b_input.csv`, simply execute `.\run.sh`
 * To alter the default settings add the `-i` flag to `.\run.sh` to enter interactive mode.
